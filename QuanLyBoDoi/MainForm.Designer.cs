@@ -289,9 +289,10 @@
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel3);
-            panel2.Location = new Point(1, 1);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(3, 3);
             panel2.Name = "panel2";
-            panel2.Size = new Size(930, 1800);
+            panel2.Size = new Size(931, 1800);
             panel2.TabIndex = 0;
             // 
             // panel15
