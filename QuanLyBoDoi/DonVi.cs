@@ -13,13 +13,13 @@ namespace QuanLyBoDoi
         [PrimaryKey] public string Id { get; set; }
         [ForeignKey(typeof(People))]
         public string PeopleID { get; set; }
-        public string TieuDoi {  get; set; }
-        public string TrungDoi { get; set; }
-        public string DaiDoi { get; set; }
-        public string TieuDoan { get; set; }
-        public string TrungDoan { get; set; }
-        public string SuDoan { get; set; }
-        public string QuanKhu { get; set; }
+        public string TieuDoi {  get; set; } = "";
+        public string TrungDoi { get; set; } = "";
+        public string DaiDoi { get; set; } = "";
+        public string TieuDoan { get; set; } = "";
+        public string TrungDoan { get; set; } = "";
+        public string SuDoan { get; set; } = "";
+        public string QuanKhu { get; set; } = "";
 
         public DonVi() { }
         public DonVi(string tieuDoi, string trungDoi, string daiDoi, string tieuDoan, string trungDoan, string suDoan)

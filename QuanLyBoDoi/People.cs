@@ -10,21 +10,21 @@ namespace QuanLyBoDoi
         [PrimaryKey]
         public string PeopleID { get; set; }
         [Description("Họ tên")]
-        public string Name{ get; set; }
-        public string OtherName{ get; set; }
-        public string Birth{ get; set; }
-        public string CCCD{ get; set; }
+        public string Name { get; set; } = "";
+        public string OtherName{ get; set; } = "";
+        public string Birth{ get; set; } = "";
+        public string CCCD{ get; set; } = "";
         public DANTOC Dantoc{ get; set; }
         public TONGIAO Tongiao{ get; set; }
         public TRINHDO Vanhoa{ get; set; }
         public bool Dang{ get; set; }
-        public string NgayDang{ get; set; }
+        public string NgayDang{ get; set; } = "";
         public bool Doan{ get; set; }
-        public string NgayDoan{ get; set; }
+        public string NgayDoan{ get; set; } = "";
         public JOB Job{ get; set; }
         public bool LamAnXa {  get; set; }
-        public string ThuNhapCaNhan{ get; set; }
-        public string NangKhieu{ get; set; }
+        public string ThuNhapCaNhan{ get; set; } = "";
+        public string NangKhieu{ get; set; } = "";
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<QueQuan> QueQuan{ get; set; }
         [OneToMany(CascadeOperations = CascadeOperation.All)]
@@ -41,96 +41,96 @@ namespace QuanLyBoDoi
         public List<GDNuocNgoai> GDNN { get; set; }
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<VPPL> vppl { get; set; }
-        public string GDBlobbed { get; set; }
+        public string GDBlobbed { get; set; } = "";
         public bool BoMeDKKH { get; set; }
         public bool ConNgoaiHon { get; set; }
 
         public HOANCANH HoanCanh {  get; set; }
-        public string MoTaHoanCanh{ get; set; }
+        public string MoTaHoanCanh{ get; set; } = "";
         public int ThuNhapGiaDinh{ get; set; }
-        public string LydoKhoKhan{ get; set; }
-        public string SongVoi{ get; set; }
+        public string LydoKhoKhan{ get; set; } = "";
+        public string SongVoi{ get; set; } = "";
         public bool ConGiaThu{ get; set; }
         public bool BomeLyHon{ get; set; }
-        public string LydoLyHon{ get; set; }
+        public string LydoLyHon{ get; set; } = "";
         public int ConThu{ get; set; }
         public bool ChaCoVoKe{ get; set; }
-        public string TTVoKe{ get; set; }
+        public string TTVoKe{ get; set; } = "";
         public bool MeCoChongKhac{ get; set; }
-        public string TTChongKhac{ get; set; }
+        public string TTChongKhac{ get; set; } = "";
         public bool XamCham{ get; set; }
         //Table XamCham
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<XamCham> XC { get; set; }
-        public string XamChamBlobbed { get; set; }
+        public string XamChamBlobbed { get; set; } = "";
         public bool NghienRuou{ get; set; }
-        public string MucDoNR{ get; set; }
+        public string MucDoNR{ get; set; } = "";
         public bool NghienThuoc{ get; set; }
-        public string MucDoNT{ get; set; }
+        public string MucDoNT{ get; set; } = "";
         public bool NghienGame{ get; set; }
-        public string MucDoNG{ get; set; }
+        public string MucDoNG{ get; set; } = "";
         public bool NhuomToc{ get; set; }
-        public string TTNhuomToc{ get; set; }
-        public string LydoNhuomToc { get; set; }
+        public string TTNhuomToc{ get; set; } = "";
+        public string LydoNhuomToc { get; set; } = "";
         public bool MXH { get; set; }
-        public string TTMXH { get; set; }
-        public string GhiChuMXH { get; set; }
-        public string SK{ get; set; }
-        public string Benh{ get; set; }
+        public string TTMXH { get; set; } = "";
+        public string GhiChuMXH { get; set; } = "";
+        public string SK{ get; set; } = "";
+        public string Benh{ get; set; } = "";
         public bool GDbenhDiTruyen{ get; set; }
-        public string BenhDiTruyen{ get; set; }
+        public string BenhDiTruyen{ get; set; } = "";
         public bool GDBenhHiemNgheo{ get; set; }
-        public string TTBenhHiemNgheo{ get; set; }
+        public string TTBenhHiemNgheo{ get; set; } = "";
         public bool TNGT{ get; set; }
-        public string TTTNGT{ get; set; }
+        public string TTTNGT{ get; set; } = "";
         public bool TNGTPLXL{ get; set; }
-        public string MucDoXuLyTNGT{ get; set; }
-        
-        public string GDNNBlobbed { get; set; }
+        public string MucDoXuLyTNGT{ get; set; } = "";
+
+        public string GDNNBlobbed { get; set; } = "";
         public bool GDNuocNgoai { get; set; }
         [ForeignKey(typeof(NY))]
         public string NYID { get; set; }
         [OneToOne]
         public NY ny {  get; set; }
         public bool DKKH{ get; set; }
-        public string LydoCoCon { get; set; }
+        public string LydoCoCon { get; set; } = "";
         public bool ConDKKS{ get; set; }
-        public string TTBanThan{ get; set; }
+        public string TTBanThan{ get; set; } = "";
         public TRINHDO TrinhDo{ get; set; }
         public bool CDDH { get; set; }
-        public string TruongHoc { get; set; }
-        public string ChuyenNganh { get; set; }
+        public string TruongHoc { get; set; } = "";
+        public string ChuyenNganh { get; set; } = "";
         public bool BaoLuu{ get; set; }
-        public string TTBaoLuu{ get; set; }
+        public string TTBaoLuu{ get; set; } = "";
         public bool ConNQNQ{ get; set; }
-        public string TTConNQNQ{ get; set; }
+        public string TTConNQNQ{ get; set; } = "";
         public bool NoNan{ get; set; }
-        public string TTNoNan{ get; set; }
+        public string TTNoNan{ get; set; } = "";
         public bool CungDPVPPL{ get; set; }
-        public string TTCungDPVPPL{ get; set; }
+        public string TTCungDPVPPL{ get; set; } = "";
         public bool TinhNguyen{ get; set; }
-        public string TTTinhNguyen{ get; set; }
-        public string VPPLXL { get; set; }
+        public string TTTinhNguyen{ get; set; } = "";
+        public string VPPLXL { get; set; } = "";
         public bool ThuongBenhBinh { get; set; }
-        public string TTThuongBB { get; set; }
+        public string TTThuongBB { get; set; } = "";
         public bool CTTrongQD { get; set; }
-        public string TTCTTrongQD { get; set; }
+        public string TTCTTrongQD { get; set; } = "";
         public bool LietSi { get; set; }
-        public string TTLietsi { get; set; }
+        public string TTLietsi { get; set; } = "";
         public bool MeVNAH { get; set; }
-        public string TTMeVNAH { get; set; }
+        public string TTMeVNAH { get; set; } = "";
         public bool CBDV { get; set; }
-        public string HotenCBDV { get; set; }
-        public string QuanheCBDV { get; set; }
+        public string HotenCBDV { get; set; } = "";
+        public string QuanheCBDV { get; set; } = "";
 
         public bool CoNY {  get; set; }
-        public string HotenNY {  get; set; }
-        public string TuoiNY { get; set; }
-        public string SDTNY { get; set; }
+        public string HotenNY {  get; set; } = "";
+        public string TuoiNY { get; set; } = "";
+        public string SDTNY { get; set; } = "";
 
         public bool NguoiThanMacBenh {  get; set; }
-        public string MotaBenhNguoiThan {  get; set; }
-        public string ThoiGianBenhNguoiThan { get; set; }
+        public string MotaBenhNguoiThan {  get; set; } = "";
+        public string ThoiGianBenhNguoiThan { get; set; } = "";
         public GiaDinh GetMember(string QuanHe)
         {
             return null;

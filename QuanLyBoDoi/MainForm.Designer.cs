@@ -1893,41 +1893,51 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Tìm kiếm";
             tabPage3.UseVisualStyleBackColor = true;
-            // 
             // viewAll
-            // 
             viewAll.Location = new Point(8, 15);
             viewAll.Name = "viewAll";
-            viewAll.Size = new Size(75, 23);
+            viewAll.Size = new Size(90, 30);
             viewAll.TabIndex = 2;
             viewAll.Text = "Xem tất cả";
             viewAll.UseVisualStyleBackColor = true;
             viewAll.Click += viewAll_Click;
-            // 
+
             // btnSearch
-            // 
             btnSearch.Location = new Point(752, 16);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(75, 23);
+            btnSearch.Size = new Size(90, 30);
             btnSearch.TabIndex = 2;
             btnSearch.Text = "Tìm kiếm";
             btnSearch.UseVisualStyleBackColor = true;
-            // 
+            btnSearch.Click += SearchPeople;
+
             // txtSearch
-            // 
-            txtSearch.Location = new Point(532, 16);
+            txtSearch.Location = new Point(532, 20);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(199, 23);
+            txtSearch.Size = new Size(200, 23);
             txtSearch.TabIndex = 1;
-            // 
+
             // alldatatable
-            // 
             alldatatable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            alldatatable.Location = new Point(8, 48);
+            alldatatable.Location = new Point(8, 60);
             alldatatable.Name = "alldatatable";
-            alldatatable.ReadOnly = true;
-            alldatatable.Size = new Size(925, 225);
+            alldatatable.Size = new Size(925, 300);
             alldatatable.TabIndex = 0;
+            alldatatable.AllowUserToAddRows = false;
+            alldatatable.ReadOnly = false;
+            this.btnSelectAll = new Button();
+            this.btnUnselectAll = new Button();
+            // btnSelectAll
+            btnSelectAll.Text = "Chọn tất cả";
+            btnSelectAll.Location = new Point(8, 370);
+            btnSelectAll.Size = new Size(100, 30);
+            btnSelectAll.Click += BtnSelectAll_Click;
+
+            // btnUnselectAll
+            btnUnselectAll.Text = "Bỏ chọn tất cả";
+            btnUnselectAll.Location = new Point(120, 370);
+            btnUnselectAll.Size = new Size(120, 30);
+            btnUnselectAll.Click += BtnUnselectAll_Click;
             // 
             // peopleBindingSource
             // 
@@ -1960,6 +1970,7 @@
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            this.Font = new Font("Segoe UI", 10);
             FormClosed += Closed;
             Load += MainFormLoad;
             tabControl1.ResumeLayout(false);
@@ -2199,5 +2210,7 @@
         private TextBox txtSearch;
         private DataGridView alldatatable;
         private Button viewAll;
+        private Button btnSelectAll;
+        private Button btnUnselectAll;
     }
 }

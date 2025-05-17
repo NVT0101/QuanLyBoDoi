@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -11,28 +11,21 @@ namespace QuanLyBoDoi
     {
         public void AddViewDataSource(List<People> people)
         {
-            try
-            {
-                var source = new BindingSource();
-                foreach (var p in people)
-                {
-                    source.Add(p);
-                }
+            var source = new BindingSource();
 
-                TuyenHuanDataView.DataSource = source;
-            }
-            catch (Exception ex)
+            foreach (var p in people)
             {
-                Log.LogError(ex);
-                System.Windows.Forms.MessageBox.Show("Error in method: " + "AddViewDataSource", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+                source.Add(p);
             }
+
+            TuyenHuanDataView.DataSource = source;
         }
-
         private void SelectTemplate(object sender, EventArgs e)
         {
             try
             {
                 //LoadMau ld = new LoadMau();
+
                 Type thisType = this.GetType();
                 MethodInfo theMethod = thisType.GetMethod($"LoadMau{ListTemplate.SelectedIndex + 1}");
                 theMethod.Invoke(this, null);

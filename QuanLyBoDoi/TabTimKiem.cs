@@ -1,9 +1,11 @@
-﻿using SQLiteNetExtensions.Extensions;
+using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Telerik.Windows.Documents.Spreadsheet.Expressions.Functions;
 
 namespace QuanLyBoDoi
 {
@@ -11,155 +13,267 @@ namespace QuanLyBoDoi
     {
         private void ViewPeople(object sender, EventArgs e)
         {
-            string selID = alldatatable.SelectedRows[0].Cells[0].Value.ToString();
-            curentMode = CONTROL.EDITMODE;
-            tabControl1.SelectedIndex = 0;
-            BindData(selID);
+            try
+            {
+                string selID = alldatatable.SelectedRows[0].Cells[0].Value.ToString();
+                curentMode = CONTROL.EDITMODE;
+                tabControl1.SelectedIndex = 0;
+                BindData(selID);
+            }
+            catch (Exception ex)
+            {
+                Log.LogError(ex);
+                System.Windows.Forms.MessageBox.Show("Error in method: " + "ViewPeople", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
         }
+
         private void BindData(string peopleID)
         {
-            var newPeople = conn.GetWithChildren<People>(peopleID);
-            hoten.Text = newPeople.Name;
-            hoten1.Text = newPeople.OtherName;
-            ngaysinh.Text = newPeople.Birth;
-            dantoc.SelectedValue = newPeople.Dantoc;
-            tongiao.SelectedValue = newPeople.Tongiao;
-            vanhoa.SelectedValue = newPeople.Vanhoa;
-            dang.Checked = newPeople.Dang;
-            ngayvaodang.Text = newPeople.NgayDang;
-            doan.Checked = newPeople.Doan;
-            ngayvaodoan.Text = newPeople.NgayDoan;
-            nghenghiep.SelectedValue = newPeople.Job;
-            thunhap.Text = newPeople.ThuNhapCaNhan;
-            noilamviecthon.Text = newPeople.NoilamViec[0].Thon;
-            noilamviecxa.Text = newPeople.NoilamViec[0].Xa;
-            noilamviechuyen.Text = newPeople.NoilamViec[0].Huyen;
-            noilamviectinh.Text = newPeople.NoilamViec[0].Tinh;
-            trinhdo.SelectedValue = newPeople.TrinhDo;
-            quequanthon.Text = newPeople.QueQuan[0].Thon;
-            quequanxa.Text = newPeople.QueQuan[0].Xa;
-            quequanhuyen.Text = newPeople.QueQuan[0].Huyen;
-            quequantinh.Text = newPeople.QueQuan[0].Tinh;
-            noiothon.Text = newPeople.ChoO[0].Thon;
-            noioxa.Text = newPeople.ChoO[0].Xa;
-            noiohuyen.Text = newPeople.ChoO[0].Huyen;
-            noiotinh.Text = newPeople.ChoO[0].Tinh;
-            tieudoi.Text = newPeople.DonVi[0].TieuDoi;
-            trungdoi.Text = newPeople.DonVi[0].TrungDoi;
-            daidoi.Text = newPeople.DonVi[0].DaiDoi;
-            tieudoan.Text = newPeople.DonVi[0].TieuDoan;
-            trungdoan.Text = newPeople.DonVi[0].TrungDoan;
-            sudoan.Text = newPeople.DonVi[0].SuDoan;
-            conngoaihon.Checked = newPeople.ConNgoaiHon;
-            hoancanhgiadinh.SelectedValue = newPeople.HoanCanh;
-            motahoancanh.Text = newPeople.MoTaHoanCanh;
-            bomelyhon.Checked = newPeople.BomeLyHon;
-            lydolyhon.Text = newPeople.LydoLyHon;
-            banthandkkh.Checked = newPeople.DKKH;
-            lydococon.Text = newPeople.LydoCoCon;
-            conthuongbinh.Checked = newPeople.ThuongBenhBinh;
-            thongtinthuongbinh.Text = newPeople.TTThuongBB;
-            concanbotrongqd.Checked = newPeople.CTTrongQD;
-            thongtincanbotrongqd.Text = newPeople.TTCTTrongQD;
-            chaumevnah.Checked = newPeople.MeVNAH;
-            thongtinchaumevnah.Text = newPeople.TTMeVNAH;
-            chaulietsi.Checked = newPeople.LietSi;
-            thongtinchaulietsi.Text = newPeople.TTLietsi;
-            uongruou.Checked = newPeople.NghienRuou;
-            ttuongruou.Text = newPeople.MucDoNR;
-            hutthuocla.Checked = newPeople.NghienThuoc;
-            tthutthuoc.Text = newPeople.MucDoNT;
-            choigame.Checked = newPeople.NghienGame;
-            ttchoigame.Text = newPeople.MucDoNG;
-            nhuomtoc.Checked = newPeople.NhuomToc;
-            ttnhuomtoc.Text = newPeople.TTNhuomToc;
-            lydonhuomtoc.Text = newPeople.TTNhuomToc;
-            mxh.Checked = newPeople.MXH;
-            ttmxh.Text = newPeople.TTMXH;
-            ghichumxh.Text = newPeople.GhiChuMXH;
-            cddh.Checked = newPeople.CDDH;
-            truonghoc.Text = newPeople.TruongHoc;
-            nganhhoc.Text = newPeople.ChuyenNganh;
-            concbdv.Checked = newPeople.CBDV;
-            hotencbdv.Text = newPeople.HotenCBDV;
-            quanhecbdv.Text = newPeople.QuanheCBDV;
-            nguoithanmacbenh.Checked = newPeople.NguoiThanMacBenh;
-            motanguoithanmacbenh.Text = newPeople.MotaBenhNguoiThan;
-            thoigiannguoithanmacbenh.Text = newPeople.ThoiGianBenhNguoiThan;
-            phucvulaudai.Checked = newPeople.TinhNguyen;
-            noidungphucvulaudai.Text = newPeople.TTTinhNguyen;
-            bomedkkh.Checked = newPeople.BoMeDKKH;
-
-            cony.Checked = newPeople.CoNY;
-            tenny.Text = newPeople.HotenNY;
-            tuoiny.Text = newPeople.TuoiNY;
-            sdtny.Text = newPeople.SDTNY;
-            //GD
-            BindGD(newPeople.GD);
-            //GDNN
-            BindGDNN(newPeople.GDNN);
-            //VPPL
-            BindVPPL(newPeople.vppl);
-            //CreateXamCham() = newPeople.XC;
-            BindXC(newPeople.XC);
-
+            try
+            {
+                var newPeople = conn.GetWithChildren<People>(peopleID);
+                hoten.Text = newPeople.Name;
+                hoten1.Text = newPeople.OtherName;
+                ngaysinh.Text = newPeople.Birth;
+                dantoc.SelectedValue = newPeople.Dantoc;
+                tongiao.SelectedValue = newPeople.Tongiao;
+                vanhoa.SelectedValue = newPeople.Vanhoa;
+                dang.Checked = newPeople.Dang;
+                ngayvaodang.Text = newPeople.NgayDang;
+                doan.Checked = newPeople.Doan;
+                ngayvaodoan.Text = newPeople.NgayDoan;
+                nghenghiep.SelectedValue = newPeople.Job;
+                thunhap.Text = newPeople.ThuNhapCaNhan;
+                noilamviecthon.Text = newPeople.NoilamViec[0].Thon;
+                noilamviecxa.Text = newPeople.NoilamViec[0].Xa;
+                noilamviechuyen.Text = newPeople.NoilamViec[0].Huyen;
+                noilamviectinh.Text = newPeople.NoilamViec[0].Tinh;
+                trinhdo.SelectedValue = newPeople.TrinhDo;
+                quequanthon.Text = newPeople.QueQuan[0].Thon;
+                quequanxa.Text = newPeople.QueQuan[0].Xa;
+                quequanhuyen.Text = newPeople.QueQuan[0].Huyen;
+                quequantinh.Text = newPeople.QueQuan[0].Tinh;
+                noiothon.Text = newPeople.ChoO[0].Thon;
+                noioxa.Text = newPeople.ChoO[0].Xa;
+                noiohuyen.Text = newPeople.ChoO[0].Huyen;
+                noiotinh.Text = newPeople.ChoO[0].Tinh;
+                tieudoi.Text = newPeople.DonVi[0].TieuDoi;
+                trungdoi.Text = newPeople.DonVi[0].TrungDoi;
+                daidoi.Text = newPeople.DonVi[0].DaiDoi;
+                tieudoan.Text = newPeople.DonVi[0].TieuDoan;
+                trungdoan.Text = newPeople.DonVi[0].TrungDoan;
+                sudoan.Text = newPeople.DonVi[0].SuDoan;
+                conngoaihon.Checked = newPeople.ConNgoaiHon;
+                hoancanhgiadinh.SelectedValue = newPeople.HoanCanh;
+                motahoancanh.Text = newPeople.MoTaHoanCanh;
+                bomelyhon.Checked = newPeople.BomeLyHon;
+                lydolyhon.Text = newPeople.LydoLyHon;
+                banthandkkh.Checked = newPeople.DKKH;
+                lydococon.Text = newPeople.LydoCoCon;
+                conthuongbinh.Checked = newPeople.ThuongBenhBinh;
+                thongtinthuongbinh.Text = newPeople.TTThuongBB;
+                concanbotrongqd.Checked = newPeople.CTTrongQD;
+                thongtincanbotrongqd.Text = newPeople.TTCTTrongQD;
+                chaumevnah.Checked = newPeople.MeVNAH;
+                thongtinchaumevnah.Text = newPeople.TTMeVNAH;
+                chaulietsi.Checked = newPeople.LietSi;
+                thongtinchaulietsi.Text = newPeople.TTLietsi;
+                uongruou.Checked = newPeople.NghienRuou;
+                ttuongruou.Text = newPeople.MucDoNR;
+                hutthuocla.Checked = newPeople.NghienThuoc;
+                tthutthuoc.Text = newPeople.MucDoNT;
+                choigame.Checked = newPeople.NghienGame;
+                ttchoigame.Text = newPeople.MucDoNG;
+                nhuomtoc.Checked = newPeople.NhuomToc;
+                ttnhuomtoc.Text = newPeople.TTNhuomToc;
+                lydonhuomtoc.Text = newPeople.TTNhuomToc;
+                mxh.Checked = newPeople.MXH;
+                ttmxh.Text = newPeople.TTMXH;
+                ghichumxh.Text = newPeople.GhiChuMXH;
+                cddh.Checked = newPeople.CDDH;
+                truonghoc.Text = newPeople.TruongHoc;
+                nganhhoc.Text = newPeople.ChuyenNganh;
+                concbdv.Checked = newPeople.CBDV;
+                hotencbdv.Text = newPeople.HotenCBDV;
+                quanhecbdv.Text = newPeople.QuanheCBDV;
+                nguoithanmacbenh.Checked = newPeople.NguoiThanMacBenh;
+                motanguoithanmacbenh.Text = newPeople.MotaBenhNguoiThan;
+                thoigiannguoithanmacbenh.Text = newPeople.ThoiGianBenhNguoiThan;
+                phucvulaudai.Checked = newPeople.TinhNguyen;
+                noidungphucvulaudai.Text = newPeople.TTTinhNguyen;
+                bomedkkh.Checked = newPeople.BoMeDKKH;
+                cony.Checked = newPeople.CoNY;
+                tenny.Text = newPeople.HotenNY;
+                tuoiny.Text = newPeople.TuoiNY;
+                sdtny.Text = newPeople.SDTNY;
+                //GD
+                BindGD(newPeople.GD);
+                //GDNN
+                BindGDNN(newPeople.GDNN);
+                //VPPL
+                BindVPPL(newPeople.vppl);
+                //CreateXamCham() = newPeople.XC;
+                BindXC(newPeople.XC);
+            }
+            catch (Exception ex)
+            {
+                Log.LogError(ex);
+                System.Windows.Forms.MessageBox.Show("Error in method: " + "BindData", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
         }
+
         private void DeletePeople(object sender, EventArgs e)
         {
-            
-            People newPeople = CreatePeople();
-            DialogResult dialogResult = MessageBox.Show("Xác nhận xóa", "Xác nhận", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
+            try
             {
-                foreach (DataGridViewRow r in alldatatable.SelectedRows)
+                People newPeople = CreatePeople();
+                DialogResult dialogResult = MessageBox.Show("Xác nhận xóa", "Xác nhận", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
                 {
-
-                    string selID = r.Cells[0].Value.ToString();
-                    conn.Delete<People>(selID);
-                    //SQLConnection.InsertData(conn, newPeople);
+                    foreach (DataGridViewRow r in alldatatable.SelectedRows)
+                    {
+                        string selID = r.Cells[0].Value.ToString();
+                        conn.Delete<People>(selID);
+                        UpdateDataView();
+                    }
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                //do something else
                 }
             }
-            else if (dialogResult == DialogResult.No)
+            catch (Exception ex)
             {
-                //do something else
+                Log.LogError(ex);
+                System.Windows.Forms.MessageBox.Show("Error in method: " + "DeletePeople", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
         }
 
         private void SearchPeople(object sender, EventArgs e)
         {
-            string txt = txtSearch.Text;
-            var res = conn.GetAllWithChildren<People>().Where(p =>
+            try
             {
-                bool match = false;
-                match = p.Name.Contains(txt) || p.QueQuan[0].Thon.Contains(txt) || p.QueQuan[0].Xa.Contains(txt)
-                || p.QueQuan[0].Huyen.Contains(txt) || p.QueQuan[0].Tinh.Contains(txt);
-                match |= p.GD.Exists(g => g.Name.Contains(txt));
-                match |= p.HotenNY.Contains(txt);
-                match |= p.CCCD.Contains(txt);
-                return match;
-            });
-            var source = new BindingSource();
+                string txt = txtSearch.Text;
+                var res = conn.GetAllWithChildren<People>().Where(p =>
+                {
+                    bool match = false;
+                    match = p.Name.Contains(txt) || p.QueQuan[0].Thon.Contains(txt) || p.QueQuan[0].Xa.Contains(txt) || p.QueQuan[0].Huyen.Contains(txt) || p.QueQuan[0].Tinh.Contains(txt);
+                    match |= p.GD.Exists(g => g.Name.Contains(txt));
+                    match |= p.HotenNY.Contains(txt);
+                    match |= p.CCCD.Contains(txt);
+                    return match;
+                });
+                var source = new BindingSource();
+                foreach (var p in res)
+                {
+                    source.Add(p);
+                }
 
-            foreach (var p in res)
-            {
-                source.Add(p);
+                alldatatable.DataSource = source;
             }
-            alldatatable.DataSource = source;
+            catch (Exception ex)
+            {
+                Log.LogError(ex);
+                System.Windows.Forms.MessageBox.Show("Error in method: " + "SearchPeople", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
         }
-
-
 
         private void viewAll_Click(object sender, EventArgs e)
         {
-            var listPeople = conn.GetAllWithChildren<People>();
-
-            var source = new BindingSource();
-
-            foreach (var p in listPeople)
+            try
             {
-                source.Add(p);
+                var listPeople = conn.GetAllWithChildren<People>();
+                //lastSearch = listPeople;
+                var source = new BindingSource();
+                //var filtered = conn.Table<People>();
+                foreach (var p in listPeople)
+                {
+                    source.Add(p);
+                }
+
+                alldatatable.DataSource = source;
             }
-            alldatatable.DataSource = source;
+            catch (Exception ex)
+            {
+                Log.LogError(ex);
+                System.Windows.Forms.MessageBox.Show("Error in method: " + "viewAll_Click", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
+        }
+
+        private void AddCheckboxColumn()
+        {
+            try
+            {
+                DataGridViewCheckBoxColumn checkboxColumn = new DataGridViewCheckBoxColumn();
+                checkboxColumn.HeaderText = "Chọn";
+                checkboxColumn.Name = "colCheck";
+                checkboxColumn.Width = 60;
+                alldatatable.Columns.Insert(0, checkboxColumn);
+            }
+            catch (Exception ex)
+            {
+                Log.LogError(ex);
+                System.Windows.Forms.MessageBox.Show("Error in method: " + "AddCheckboxColumn", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnSelectAll_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (DataGridViewRow row in alldatatable.Rows)
+                {
+                    row.Cells["colCheck"].Value = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.LogError(ex);
+                System.Windows.Forms.MessageBox.Show("Error in method: " + "BtnSelectAll_Click", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
+        }
+
+        private void BtnUnselectAll_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                foreach (DataGridViewRow row in alldatatable.Rows)
+                {
+                    row.Cells["colCheck"].Value = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.LogError(ex);
+                System.Windows.Forms.MessageBox.Show("Error in method: " + "BtnUnselectAll_Click", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string keyword = txtSearch.Text.Trim();
+            // Code tìm kiếm dữ liệu và hiển thị vào DataGridView theo keyword
+            }
+            catch (Exception ex)
+            {
+                Log.LogError(ex);
+                System.Windows.Forms.MessageBox.Show("Error in method: " + "btnSearch_Click", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
+        }
+
+        //private Func<People, bool> lastFilterPredicate = s => true;
+        private void UpdateDataView()
+        {
+            try
+            {
+            }
+            catch (Exception ex)
+            {
+                Log.LogError(ex);
+                System.Windows.Forms.MessageBox.Show("Error in method: " + "UpdateDataView", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
+            }
         }
     }
 }

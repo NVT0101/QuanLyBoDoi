@@ -15,27 +15,27 @@ namespace QuanLyBoDoi
 
         [ForeignKey(typeof(People))]
         public string PeopleID { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
         public QUANHE QuanHe { get; set; }
-        public string NgaySinh { get; set; }
-        public string NgheNghiep { get; set; }
-        public string SDT { get; set; }
+        public string NgaySinh { get; set; } = "";
+        public string NgheNghiep { get; set; } = "";
+        public string SDT { get; set; } = "";
         public bool Mat { get; set; }
-        public string TGMat { get; set; }
-        public string LyDoMat { get; set; }
+        public string TGMat { get; set; } = "";
+        public string LyDoMat { get; set; } = "";
         public bool BenhHiemNgheo {  get; set; }
-        public string TTBenhHiemngheo {  get; set; }
+        public string TTBenhHiemngheo {  get; set; } = "";
         public bool BenhDiTruyen { get; set; }
-        public string TTBenhDiTruyen { get; set; }
+        public string TTBenhDiTruyen { get; set; } = "";
 
-        
+
         public bool NQNQ {  get; set; }
-        public string TTNQNQ { get; set; }
+        public string TTNQNQ { get; set; } = "";
         public bool laCBDV {  get; set; }
-        public string TTCBDV {  get; set; }
+        public string TTCBDV {  get; set; } = "";
 
 
-        
+
         [ForeignKey(typeof(GDNuocNgoai))]
         public string GDNNID { get; set; }
         [OneToOne]

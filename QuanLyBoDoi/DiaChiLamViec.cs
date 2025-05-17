@@ -15,10 +15,10 @@ namespace QuanLyBoDoi
         [ForeignKey(typeof(People))]
         public string PeopleID { get; set; }
 
-        public string Thon { get; set; }
-        public string Xa { get; set; }
-        public string Huyen { get; set; }
-        public string Tinh { get; set; }
+        public string Thon { get; set; } = "";
+        public string Xa { get; set; } = "";
+        public string Huyen { get; set; } = "";
+        public string Tinh { get; set; } = "";
 
         public DiaChiLamViec() { }
 

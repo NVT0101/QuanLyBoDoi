@@ -15,10 +15,10 @@ namespace QuanLyBoDoi
         /*[ForeignKey(typeof(People))]
         public string PeopleID { get; set; }*/
 
-        public string Thon;
-        public string Xa;
-        public string Huyen;
-        public string Tinh;
+        public string Thon = "";
+        public string Xa = "";
+        public string Huyen = "";
+        public string Tinh = "";
 
         public Address(string thon, string xa, string huyen, string tinh)
         {
