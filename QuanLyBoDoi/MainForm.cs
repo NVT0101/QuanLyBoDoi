@@ -1,3 +1,5 @@
+using MaterialSkin;
+using MaterialSkin.Controls;
 using SQLite;
 using SQLiteNetExtensions.Extensions;
 using System.ComponentModel;
@@ -247,6 +249,7 @@ namespace QuanLyBoDoi
         public MainForm()
         {
             InitializeComponent();
+           
         }
 
         private void radMenuItem7_Click(object sender, EventArgs e)
@@ -276,6 +279,7 @@ namespace QuanLyBoDoi
             }
         }
         private System.Windows.Forms.Timer resizeTimer;
+        private readonly MaterialSkinManager materialSkinManager;
         private void MainFormLoad(object sender, EventArgs e)
         {
             try
@@ -286,6 +290,8 @@ namespace QuanLyBoDoi
                 conn = SQLConnection.CreateConnection(Common.CurentDB);
                 Common.outPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Output");
                 menupanel.Controls.Add(CreateButton("Nhập thông tin", AddTodatabase), 2, 1);
+
+                
             }
             catch (Exception ex)
             {

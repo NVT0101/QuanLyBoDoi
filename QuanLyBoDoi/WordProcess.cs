@@ -1,7 +1,5 @@
 using Spire.Doc;
 using Spire.Xls;
-using Telerik.WinControls.Svg;
-using Telerik.Windows.Documents.Spreadsheet.Expressions.Functions;
 using Convert = System.Convert;
 using FileFormat = Spire.Doc.FileFormat;
 

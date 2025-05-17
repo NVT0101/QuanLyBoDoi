@@ -221,7 +221,6 @@
             txtSearch = new TextBox();
             alldatatable = new DataGridView();
             peopleBindingSource = new BindingSource(components);
-            highContrastBlackTheme1 = new Telerik.WinControls.Themes.HighContrastBlackTheme();
             menupanel = new TableLayoutPanel();
             btnSelectAll = new Button();
             btnUnselectAll = new Button();
@@ -2123,7 +2122,6 @@
         private RichTextBox motahoancanh;
         private Label label30;
         private Label label29;
-        private Telerik.WinControls.Themes.HighContrastBlackTheme highContrastBlackTheme1;
         private DataGridViewTextBoxColumn hotengiadinh;
         private DataGridViewTextBoxColumn ngaysinhgiadinh;
         private DataGridViewTextBoxColumn quequangiadinh;

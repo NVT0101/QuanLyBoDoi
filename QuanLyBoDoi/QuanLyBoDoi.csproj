@@ -163,13 +163,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="MaterialSkin.2" Version="2.3.1" />
     <PackageReference Include="Spire.Doc" Version="13.2.3" />
     <PackageReference Include="Spire.XLS" Version="15.2.3" />
     <PackageReference Include="sqlite-net" Version="1.6.292" />
     <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
     <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
-    <PackageReference Include="UI.for.WinForms.AllControls.Net80.Trial">
-      <Version>2024.4.1113.0</Version>
-    </PackageReference>
   </ItemGroup>
 </Project>
