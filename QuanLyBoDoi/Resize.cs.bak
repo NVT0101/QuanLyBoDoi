@@ -1,0 +1,170 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace QuanLyBoDoi
+{
+    partial class MainForm
+    {
+        private Dictionary<Control, Rectangle> _originalBounds = new();
+        private Dictionary<Control, float> _originalFontSizes = new();
+        private bool _hasScaled = false;
+
+        private int _originalWidth;
+        private int _originalHeight;
+
+        // Lưu ImageList gốc của ListView (key: ListView control)
+        private Dictionary<ListView, (ImageList small, ImageList large)> _originalImageLists = new();
+
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern IntPtr SendMessage(IntPtr hWnd, int wMsg, IntPtr wParam, IntPtr lParam);
+
+        private const int WM_SETREDRAW = 0x000B;
+
+        private void BeginUpdate()
+        {
+            SendMessage(this.Handle, WM_SETREDRAW, IntPtr.Zero, IntPtr.Zero);
+        }
+
+        private void EndUpdate()
+        {
+            SendMessage(this.Handle, WM_SETREDRAW, new IntPtr(1), IntPtr.Zero);
+            this.Refresh();
+        }
+        /// <summary>
+        /// Gọi lại khi muốn cập nhật trạng thái gốc (ví dụ reload dữ liệu, tạo control mới)
+        /// </summary>
+        public void SaveOriginalStates(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                _originalBounds[ctrl] = ctrl.Bounds;
+                _originalFontSizes[ctrl] = ctrl.Font.Size;
+
+                if (ctrl.HasChildren)
+                    SaveOriginalStates(ctrl);
+            }
+        }
+
+        private IEnumerable<Control> GetAllControls(Control parent)
+        {
+            foreach (Control ctrl in parent.Controls)
+            {
+                yield return ctrl;
+                foreach (var child in GetAllControls(ctrl))
+                    yield return child;
+            }
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            float scaleX = (float)this.Width / _originalWidth;
+            float scaleY = (float)this.Height / _originalHeight;
+
+            ScaleAllControls(this, scaleX, scaleY);
+        }
+
+        private void ScaleAllControls(Control parent, float scaleX, float scaleY)
+        {
+            if (_hasScaled)
+                return;
+
+            _hasScaled = true;
+
+            foreach (Control ctrl in parent.Controls)
+            {
+                if (_originalBounds.TryGetValue(ctrl, out Rectangle originalRect))
+                {
+                    int newX = (int)(originalRect.X * scaleX);
+                    int newY = (int)(originalRect.Y * scaleY);
+                    int newWidth = (int)(originalRect.Width * scaleX);
+                    int newHeight = (int)(originalRect.Height * scaleY);
+                    ctrl.Bounds = new Rectangle(newX, newY, newWidth, newHeight);
+                }
+
+                if (_originalFontSizes.TryGetValue(ctrl, out float originalFontSize))
+                {
+                    try
+                    {
+                        ctrl.Font = new Font(ctrl.Font.FontFamily, originalFontSize * scaleY, ctrl.Font.Style);
+                    }
+                    catch
+                    {
+                        // Bỏ qua control không hỗ trợ Font scale
+                    }
+                }
+
+                if (ctrl.HasChildren)
+                {
+                    ScaleAllControls(ctrl, scaleX, scaleY);
+                }
+
+                // Control đặc biệt: DataGridView
+                if (ctrl is DataGridView dgv)
+                {
+                    dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                }
+                else if (ctrl is ListView lv)
+                {
+                    lv.View = View.Details;
+                    foreach (ColumnHeader col in lv.Columns)
+                    {
+                        col.Width = (int)(col.Width * scaleX);
+                    }
+                }
+                else if (ctrl is TabControl tab)
+                {
+                    foreach (TabPage tabPage in tab.TabPages)
+                    {
+                        ScaleAllControls(tabPage, scaleX, scaleY);
+                    }
+                }
+            }
+        }
+
+        private ImageList ScaleImageList(ImageList originalList, float scaleX, float scaleY)
+        {
+            int newWidth = Math.Max(1, (int)(originalList.ImageSize.Width * scaleX));
+            int newHeight = Math.Max(1, (int)(originalList.ImageSize.Height * scaleY));
+
+            ImageList newList = new ImageList();
+            newList.ColorDepth = originalList.ColorDepth;
+            newList.ImageSize = new Size(newWidth, newHeight);
+
+            foreach (Image img in originalList.Images)
+            {
+                Bitmap bmp = new Bitmap(img, newWidth, newHeight);
+                newList.Images.Add(bmp);
+            }
+
+            return newList;
+        }
+        private void ResizeTimer_Tick(object sender, EventArgs e)
+        {
+            resizeTimer.Stop();
+
+            BeginUpdate();
+
+            float scaleX = (float)this.Width / _originalWidth;
+            float scaleY = (float)this.Height / _originalHeight;
+
+            ScaleAllControls(this, scaleX, scaleY);
+
+            EndUpdate();
+        }
+
+        private class ControlOriginalState
+        {
+            public int Left;
+            public int Top;
+            public int Width;
+            public int Height;
+            public float FontSize;
+            public string FontName;
+            public FontStyle FontStyle;
+        }
+    }
+}

@@ -275,7 +275,7 @@ namespace QuanLyBoDoi
                 System.Windows.Forms.MessageBox.Show("Error in method: " + "CreateDatabase", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
         }
-
+        private System.Windows.Forms.Timer resizeTimer;
         private void MainFormLoad(object sender, EventArgs e)
         {
             try
@@ -320,12 +320,40 @@ namespace QuanLyBoDoi
                 hoancanhgiadinh.BindEnumToCombobox<HOANCANH>(HOANCANH.BTH);
                 //nghề nghiệp
                 nghenghiep.BindEnumToCombobox<JOB>(JOB.KHAC);
+
+                this.DoubleBuffered = true;
+                _originalWidth = this.Width;
+                _originalHeight = this.Height;
+                resizeTimer = new System.Windows.Forms.Timer();
+                resizeTimer.Interval = 100; // delay 200ms
+                resizeTimer.Tick += ResizeTimer_Tick;
+                SaveOriginalStates(this);
             }
             catch (Exception ex)
             {
                 Log.LogError(ex);
                 System.Windows.Forms.MessageBox.Show("Error in method: " + "InitForm", "Error", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Error);
             }
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            this.WindowState = FormWindowState.Maximized;
+            /*this.Visible = false;
+
+            *//*_originalWidth = this.Width;
+            _originalHeight = this.Height;
+
+            SaveOriginalStates(this);
+
+            float scaleX = (float)this.Width / _originalWidth;
+            float scaleY = (float)this.Height / _originalHeight;
+
+            ScaleAllControls(this, scaleX, scaleY);*//*
+
+            this.Visible = true;*/
         }
 
         private void OpenTabpageSelectdatabase(object sender, EventArgs e)
@@ -358,7 +386,7 @@ namespace QuanLyBoDoi
         {
             try
             {
-            //SQLConnection.ReadData(conn);
+                //SQLConnection.ReadData(conn);
             }
             catch (Exception ex)
             {
@@ -434,7 +462,7 @@ namespace QuanLyBoDoi
             var btn = new Button();
             try
             {
-                
+
                 btn.Text = name;
                 btn.Height = 80;
                 btn.Width = 150;

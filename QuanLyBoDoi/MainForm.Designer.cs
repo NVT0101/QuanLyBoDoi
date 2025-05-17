@@ -223,6 +223,8 @@
             peopleBindingSource = new BindingSource(components);
             highContrastBlackTheme1 = new Telerik.WinControls.Themes.HighContrastBlackTheme();
             menupanel = new TableLayoutPanel();
+            btnSelectAll = new Button();
+            btnUnselectAll = new Button();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             panel2.SuspendLayout();
@@ -266,10 +268,10 @@
             // 
             tabPage1.AutoScroll = true;
             tabPage1.Controls.Add(panel2);
-            tabPage1.Location = new Point(4, 24);
+            tabPage1.Location = new Point(4, 26);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(954, 288);
+            tabPage1.Size = new Size(954, 286);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Nhập thông tin";
             tabPage1.UseVisualStyleBackColor = true;
@@ -312,7 +314,7 @@
             nguoithanmacbenh.AutoSize = true;
             nguoithanmacbenh.Location = new Point(4, 15);
             nguoithanmacbenh.Name = "nguoithanmacbenh";
-            nguoithanmacbenh.Size = new Size(225, 19);
+            nguoithanmacbenh.Size = new Size(257, 23);
             nguoithanmacbenh.TabIndex = 2;
             nguoithanmacbenh.Text = "Có người thân mắc bệnh hiểm nghèo";
             nguoithanmacbenh.UseVisualStyleBackColor = true;
@@ -321,14 +323,14 @@
             // 
             thoigiannguoithanmacbenh.Location = new Point(764, 11);
             thoigiannguoithanmacbenh.Name = "thoigiannguoithanmacbenh";
-            thoigiannguoithanmacbenh.Size = new Size(145, 23);
+            thoigiannguoithanmacbenh.Size = new Size(145, 25);
             thoigiannguoithanmacbenh.TabIndex = 7;
             // 
             // motanguoithanmacbenh
             // 
             motanguoithanmacbenh.Location = new Point(323, 13);
             motanguoithanmacbenh.Name = "motanguoithanmacbenh";
-            motanguoithanmacbenh.Size = new Size(325, 23);
+            motanguoithanmacbenh.Size = new Size(325, 25);
             motanguoithanmacbenh.TabIndex = 7;
             // 
             // label57
@@ -336,7 +338,7 @@
             label57.AutoSize = true;
             label57.Location = new Point(688, 15);
             label57.Name = "label57";
-            label57.Size = new Size(56, 15);
+            label57.Size = new Size(65, 19);
             label57.TabIndex = 3;
             label57.Text = "Thời gian";
             // 
@@ -345,7 +347,7 @@
             label58.AutoSize = true;
             label58.Location = new Point(258, 17);
             label58.Name = "label58";
-            label58.Size = new Size(38, 15);
+            label58.Size = new Size(46, 19);
             label58.TabIndex = 3;
             label58.Text = "Mô tả";
             // 
@@ -368,7 +370,7 @@
             cony.AutoSize = true;
             cony.Location = new Point(4, 15);
             cony.Name = "cony";
-            cony.Size = new Size(97, 19);
+            cony.Size = new Size(110, 23);
             cony.TabIndex = 2;
             cony.Text = "Có người yêu";
             cony.UseVisualStyleBackColor = true;
@@ -377,14 +379,14 @@
             // 
             sdtny.Location = new Point(767, 9);
             sdtny.Name = "sdtny";
-            sdtny.Size = new Size(145, 23);
+            sdtny.Size = new Size(145, 25);
             sdtny.TabIndex = 7;
             // 
             // tuoiny
             // 
             tuoiny.Location = new Point(542, 9);
             tuoiny.Name = "tuoiny";
-            tuoiny.Size = new Size(145, 23);
+            tuoiny.Size = new Size(145, 25);
             tuoiny.TabIndex = 7;
             // 
             // label53
@@ -392,7 +394,7 @@
             label53.AutoSize = true;
             label53.Location = new Point(178, 17);
             label53.Name = "label53";
-            label53.Size = new Size(99, 15);
+            label53.Size = new Size(116, 19);
             label53.TabIndex = 3;
             label53.Text = "Họ tên người yêu";
             // 
@@ -401,7 +403,7 @@
             label55.AutoSize = true;
             label55.Location = new Point(719, 15);
             label55.Name = "label55";
-            label55.Size = new Size(27, 15);
+            label55.Size = new Size(33, 19);
             label55.TabIndex = 3;
             label55.Text = "SĐT";
             // 
@@ -409,7 +411,7 @@
             // 
             tenny.Location = new Point(305, 12);
             tenny.Name = "tenny";
-            tenny.Size = new Size(145, 23);
+            tenny.Size = new Size(145, 25);
             tenny.TabIndex = 7;
             // 
             // label54
@@ -417,7 +419,7 @@
             label54.AutoSize = true;
             label54.Location = new Point(494, 15);
             label54.Name = "label54";
-            label54.Size = new Size(30, 15);
+            label54.Size = new Size(35, 19);
             label54.TabIndex = 3;
             label54.Text = "Tuổi";
             // 
@@ -443,7 +445,7 @@
             concbdv.AutoSize = true;
             concbdv.Location = new Point(2, 51);
             concbdv.Name = "concbdv";
-            concbdv.Size = new Size(142, 19);
+            concbdv.Size = new Size(162, 23);
             concbdv.TabIndex = 2;
             concbdv.Text = "Con cán bộ đảng viên";
             concbdv.UseVisualStyleBackColor = true;
@@ -453,7 +455,7 @@
             cddh.AutoSize = true;
             cddh.Location = new Point(2, 12);
             cddh.Name = "cddh";
-            cddh.Size = new Size(171, 19);
+            cddh.Size = new Size(195, 23);
             cddh.TabIndex = 2;
             cddh.Text = "Học CĐ, Trung cấp, Đại học";
             cddh.UseVisualStyleBackColor = true;
@@ -462,7 +464,7 @@
             // 
             quanhecbdv.Location = new Point(553, 47);
             quanhecbdv.Name = "quanhecbdv";
-            quanhecbdv.Size = new Size(145, 23);
+            quanhecbdv.Size = new Size(145, 25);
             quanhecbdv.TabIndex = 7;
             // 
             // label52
@@ -470,7 +472,7 @@
             label52.AutoSize = true;
             label52.Location = new Point(465, 53);
             label52.Name = "label52";
-            label52.Size = new Size(52, 15);
+            label52.Size = new Size(62, 19);
             label52.TabIndex = 3;
             label52.Text = "Quan hệ";
             // 
@@ -478,14 +480,14 @@
             // 
             nganhhoc.Location = new Point(553, 8);
             nganhhoc.Name = "nganhhoc";
-            nganhhoc.Size = new Size(145, 23);
+            nganhhoc.Size = new Size(145, 25);
             nganhhoc.TabIndex = 7;
             // 
             // hotencbdv
             // 
             hotencbdv.Location = new Point(284, 49);
             hotencbdv.Name = "hotencbdv";
-            hotencbdv.Size = new Size(145, 23);
+            hotencbdv.Size = new Size(145, 25);
             hotencbdv.TabIndex = 7;
             // 
             // label50
@@ -493,7 +495,7 @@
             label50.AutoSize = true;
             label50.Location = new Point(465, 14);
             label50.Name = "label50";
-            label50.Size = new Size(43, 15);
+            label50.Size = new Size(50, 19);
             label50.TabIndex = 3;
             label50.Text = "Ngành";
             // 
@@ -502,7 +504,7 @@
             label51.AutoSize = true;
             label51.Location = new Point(196, 55);
             label51.Name = "label51";
-            label51.Size = new Size(43, 15);
+            label51.Size = new Size(51, 19);
             label51.TabIndex = 3;
             label51.Text = "Họ tên";
             // 
@@ -510,7 +512,7 @@
             // 
             truonghoc.Location = new Point(284, 10);
             truonghoc.Name = "truonghoc";
-            truonghoc.Size = new Size(145, 23);
+            truonghoc.Size = new Size(145, 25);
             truonghoc.TabIndex = 7;
             // 
             // label49
@@ -518,7 +520,7 @@
             label49.AutoSize = true;
             label49.Location = new Point(196, 16);
             label49.Name = "label49";
-            label49.Size = new Size(44, 15);
+            label49.Size = new Size(52, 19);
             label49.TabIndex = 3;
             label49.Text = "Trường";
             // 
@@ -552,7 +554,7 @@
             // 
             ghichumxh.Location = new Point(539, 99);
             ghichumxh.Name = "ghichumxh";
-            ghichumxh.Size = new Size(106, 23);
+            ghichumxh.Size = new Size(106, 25);
             ghichumxh.TabIndex = 7;
             // 
             // label46
@@ -560,7 +562,7 @@
             label46.AutoSize = true;
             label46.Location = new Point(459, 103);
             label46.Name = "label46";
-            label46.Size = new Size(48, 15);
+            label46.Size = new Size(56, 19);
             label46.TabIndex = 3;
             label46.Text = "Ghi chú";
             // 
@@ -568,7 +570,7 @@
             // 
             ttmxh.Location = new Point(313, 101);
             ttmxh.Name = "ttmxh";
-            ttmxh.Size = new Size(106, 23);
+            ttmxh.Size = new Size(106, 25);
             ttmxh.TabIndex = 7;
             // 
             // label45
@@ -576,7 +578,7 @@
             label45.AutoSize = true;
             label45.Location = new Point(174, 105);
             label45.Name = "label45";
-            label45.Size = new Size(97, 15);
+            label45.Size = new Size(110, 19);
             label45.TabIndex = 3;
             label45.Text = "Facebook, zalo,...";
             // 
@@ -584,14 +586,14 @@
             // 
             lydonhuomtoc.Location = new Point(526, 144);
             lydonhuomtoc.Name = "lydonhuomtoc";
-            lydonhuomtoc.Size = new Size(145, 23);
+            lydonhuomtoc.Size = new Size(145, 25);
             lydonhuomtoc.TabIndex = 7;
             // 
             // ttnhuomtoc
             // 
             ttnhuomtoc.Location = new Point(285, 144);
             ttnhuomtoc.Name = "ttnhuomtoc";
-            ttnhuomtoc.Size = new Size(145, 23);
+            ttnhuomtoc.Size = new Size(145, 25);
             ttnhuomtoc.TabIndex = 7;
             // 
             // label48
@@ -599,7 +601,7 @@
             label48.AutoSize = true;
             label48.Location = new Point(464, 147);
             label48.Name = "label48";
-            label48.Size = new Size(35, 15);
+            label48.Size = new Size(42, 19);
             label48.TabIndex = 3;
             label48.Text = "Lý do";
             // 
@@ -607,7 +609,7 @@
             // 
             ttchoigame.Location = new Point(400, 60);
             ttchoigame.Name = "ttchoigame";
-            ttchoigame.Size = new Size(517, 23);
+            ttchoigame.Size = new Size(517, 25);
             ttchoigame.TabIndex = 7;
             // 
             // label47
@@ -615,7 +617,7 @@
             label47.AutoSize = true;
             label47.Location = new Point(118, 147);
             label47.Name = "label47";
-            label47.Size = new Size(150, 15);
+            label47.Size = new Size(173, 19);
             label47.TabIndex = 3;
             label47.Text = "Mô tả màu tóc, thời gian,...";
             // 
@@ -624,7 +626,7 @@
             label44.AutoSize = true;
             label44.Location = new Point(212, 64);
             label44.Name = "label44";
-            label44.Size = new Size(147, 15);
+            label44.Size = new Size(169, 19);
             label44.TabIndex = 3;
             label44.Text = "Mô tả thời gian, mức độ,...";
             // 
@@ -632,7 +634,7 @@
             // 
             ttuongruou.Location = new Point(400, 31);
             ttuongruou.Name = "ttuongruou";
-            ttuongruou.Size = new Size(517, 23);
+            ttuongruou.Size = new Size(517, 25);
             ttuongruou.TabIndex = 7;
             // 
             // label43
@@ -640,7 +642,7 @@
             label43.AutoSize = true;
             label43.Location = new Point(212, 35);
             label43.Name = "label43";
-            label43.Size = new Size(147, 15);
+            label43.Size = new Size(169, 19);
             label43.TabIndex = 3;
             label43.Text = "Mô tả thời gian, mức độ,...";
             // 
@@ -649,7 +651,7 @@
             nhuomtoc.AutoSize = true;
             nhuomtoc.Location = new Point(6, 146);
             nhuomtoc.Name = "nhuomtoc";
-            nhuomtoc.Size = new Size(87, 19);
+            nhuomtoc.Size = new Size(97, 23);
             nhuomtoc.TabIndex = 2;
             nhuomtoc.Text = "Nhuộm tóc";
             nhuomtoc.UseVisualStyleBackColor = true;
@@ -659,7 +661,7 @@
             mxh.AutoSize = true;
             mxh.Location = new Point(6, 101);
             mxh.Name = "mxh";
-            mxh.Size = new Size(144, 19);
+            mxh.Size = new Size(163, 23);
             mxh.TabIndex = 2;
             mxh.Text = "Tham gia mạng xã hội";
             mxh.UseVisualStyleBackColor = true;
@@ -669,7 +671,7 @@
             choigame.AutoSize = true;
             choigame.Location = new Point(6, 64);
             choigame.Name = "choigame";
-            choigame.Size = new Size(84, 19);
+            choigame.Size = new Size(94, 23);
             choigame.TabIndex = 2;
             choigame.Text = "Chơi game";
             choigame.UseVisualStyleBackColor = true;
@@ -678,7 +680,7 @@
             // 
             tthutthuoc.Location = new Point(400, 2);
             tthutthuoc.Name = "tthutthuoc";
-            tthutthuoc.Size = new Size(517, 23);
+            tthutthuoc.Size = new Size(517, 25);
             tthutthuoc.TabIndex = 7;
             // 
             // uongruou
@@ -686,7 +688,7 @@
             uongruou.AutoSize = true;
             uongruou.Location = new Point(6, 35);
             uongruou.Name = "uongruou";
-            uongruou.Size = new Size(83, 19);
+            uongruou.Size = new Size(95, 23);
             uongruou.TabIndex = 2;
             uongruou.Text = "Uống rượu";
             uongruou.UseVisualStyleBackColor = true;
@@ -696,7 +698,7 @@
             label42.AutoSize = true;
             label42.Location = new Point(212, 6);
             label42.Name = "label42";
-            label42.Size = new Size(147, 15);
+            label42.Size = new Size(169, 19);
             label42.TabIndex = 3;
             label42.Text = "Mô tả thời gian, mức độ,...";
             // 
@@ -705,7 +707,7 @@
             hutthuocla.AutoSize = true;
             hutthuocla.Location = new Point(6, 6);
             hutthuocla.Name = "hutthuocla";
-            hutthuocla.Size = new Size(92, 19);
+            hutthuocla.Size = new Size(104, 23);
             hutthuocla.TabIndex = 2;
             hutthuocla.Text = "Hút thuốc lá";
             hutthuocla.UseVisualStyleBackColor = true;
@@ -733,14 +735,14 @@
             // 
             thongtinchaumevnah.Location = new Point(400, 118);
             thongtinchaumevnah.Name = "thongtinchaumevnah";
-            thongtinchaumevnah.Size = new Size(517, 23);
+            thongtinchaumevnah.Size = new Size(517, 25);
             thongtinchaumevnah.TabIndex = 7;
             // 
             // thongtinchaulietsi
             // 
             thongtinchaulietsi.Location = new Point(400, 78);
             thongtinchaulietsi.Name = "thongtinchaulietsi";
-            thongtinchaulietsi.Size = new Size(517, 23);
+            thongtinchaulietsi.Size = new Size(517, 25);
             thongtinchaulietsi.TabIndex = 7;
             // 
             // chaumevnah
@@ -748,7 +750,7 @@
             chaumevnah.AutoSize = true;
             chaumevnah.Location = new Point(6, 122);
             chaumevnah.Name = "chaumevnah";
-            chaumevnah.Size = new Size(110, 19);
+            chaumevnah.Size = new Size(125, 23);
             chaumevnah.TabIndex = 2;
             chaumevnah.Text = "Cháu mẹ VNAH";
             chaumevnah.UseVisualStyleBackColor = true;
@@ -757,7 +759,7 @@
             // 
             thongtincanbotrongqd.Location = new Point(400, 40);
             thongtincanbotrongqd.Name = "thongtincanbotrongqd";
-            thongtincanbotrongqd.Size = new Size(517, 23);
+            thongtincanbotrongqd.Size = new Size(517, 25);
             thongtincanbotrongqd.TabIndex = 7;
             // 
             // chaulietsi
@@ -765,7 +767,7 @@
             chaulietsi.AutoSize = true;
             chaulietsi.Location = new Point(6, 82);
             chaulietsi.Name = "chaulietsi";
-            chaulietsi.Size = new Size(107, 19);
+            chaulietsi.Size = new Size(121, 23);
             chaulietsi.TabIndex = 2;
             chaulietsi.Text = "Con cháu liệt sĩ";
             chaulietsi.UseVisualStyleBackColor = true;
@@ -774,7 +776,7 @@
             // 
             thongtinthuongbinh.Location = new Point(400, 4);
             thongtinthuongbinh.Name = "thongtinthuongbinh";
-            thongtinthuongbinh.Size = new Size(517, 23);
+            thongtinthuongbinh.Size = new Size(517, 25);
             thongtinthuongbinh.TabIndex = 7;
             // 
             // label41
@@ -782,7 +784,7 @@
             label41.AutoSize = true;
             label41.Location = new Point(212, 122);
             label41.Name = "label41";
-            label41.Size = new Size(104, 15);
+            label41.Size = new Size(121, 19);
             label41.TabIndex = 3;
             label41.Text = "Quan hệ, họ tên,...";
             // 
@@ -791,7 +793,7 @@
             concanbotrongqd.AutoSize = true;
             concanbotrongqd.Location = new Point(6, 44);
             concanbotrongqd.Name = "concanbotrongqd";
-            concanbotrongqd.Size = new Size(188, 19);
+            concanbotrongqd.Size = new Size(217, 23);
             concanbotrongqd.TabIndex = 2;
             concanbotrongqd.Text = "Con cán bộ công tác trong QĐ";
             concanbotrongqd.UseVisualStyleBackColor = true;
@@ -801,7 +803,7 @@
             label40.AutoSize = true;
             label40.Location = new Point(212, 82);
             label40.Name = "label40";
-            label40.Size = new Size(104, 15);
+            label40.Size = new Size(121, 19);
             label40.TabIndex = 3;
             label40.Text = "Quan hệ, họ tên,...";
             // 
@@ -810,7 +812,7 @@
             conthuongbinh.AutoSize = true;
             conthuongbinh.Location = new Point(6, 8);
             conthuongbinh.Name = "conthuongbinh";
-            conthuongbinh.Size = new Size(147, 19);
+            conthuongbinh.Size = new Size(168, 23);
             conthuongbinh.TabIndex = 2;
             conthuongbinh.Text = "Con thương bệnh binh";
             conthuongbinh.UseVisualStyleBackColor = true;
@@ -820,7 +822,7 @@
             label39.AutoSize = true;
             label39.Location = new Point(212, 44);
             label39.Name = "label39";
-            label39.Size = new Size(167, 15);
+            label39.Size = new Size(196, 19);
             label39.TabIndex = 3;
             label39.Text = "Quan hệ, họ tên, CB, CV, ĐV,...";
             // 
@@ -829,7 +831,7 @@
             label38.AutoSize = true;
             label38.Location = new Point(212, 8);
             label38.Name = "label38";
-            label38.Size = new Size(163, 15);
+            label38.Size = new Size(189, 19);
             label38.TabIndex = 3;
             label38.Text = "Quan hệ, họ tên, hạng mấy,...";
             // 
@@ -847,7 +849,7 @@
             // 
             noidungphucvulaudai.Location = new Point(450, 5);
             noidungphucvulaudai.Name = "noidungphucvulaudai";
-            noidungphucvulaudai.Size = new Size(467, 23);
+            noidungphucvulaudai.Size = new Size(467, 25);
             noidungphucvulaudai.TabIndex = 7;
             // 
             // phucvulaudai
@@ -855,7 +857,7 @@
             phucvulaudai.AutoSize = true;
             phucvulaudai.Location = new Point(6, 7);
             phucvulaudai.Name = "phucvulaudai";
-            phucvulaudai.Size = new Size(260, 19);
+            phucvulaudai.Size = new Size(300, 23);
             phucvulaudai.TabIndex = 2;
             phucvulaudai.Text = "Tình nguyện phục vụ lâu dài trong Quân đội";
             phucvulaudai.UseVisualStyleBackColor = true;
@@ -865,7 +867,7 @@
             label37.AutoSize = true;
             label37.Location = new Point(318, 8);
             label37.Name = "label37";
-            label37.Size = new Size(111, 15);
+            label37.Size = new Size(131, 19);
             label37.TabIndex = 3;
             label37.Text = "Mô tả nguyện vọng";
             // 
@@ -893,28 +895,28 @@
             // 
             thunhap.Location = new Point(450, 4);
             thunhap.Name = "thunhap";
-            thunhap.Size = new Size(129, 23);
+            thunhap.Size = new Size(129, 25);
             thunhap.TabIndex = 7;
             // 
             // noilamviectinh
             // 
             noilamviectinh.Location = new Point(450, 33);
             noilamviectinh.Name = "noilamviectinh";
-            noilamviectinh.Size = new Size(54, 23);
+            noilamviectinh.Size = new Size(54, 25);
             noilamviectinh.TabIndex = 7;
             // 
             // noilamviechuyen
             // 
             noilamviechuyen.Location = new Point(314, 33);
             noilamviechuyen.Name = "noilamviechuyen";
-            noilamviechuyen.Size = new Size(54, 23);
+            noilamviechuyen.Size = new Size(54, 25);
             noilamviechuyen.TabIndex = 8;
             // 
             // noilamviecxa
             // 
             noilamviecxa.Location = new Point(186, 34);
             noilamviecxa.Name = "noilamviecxa";
-            noilamviecxa.Size = new Size(54, 23);
+            noilamviecxa.Size = new Size(54, 25);
             noilamviecxa.TabIndex = 9;
             // 
             // label36
@@ -922,7 +924,7 @@
             label36.AutoSize = true;
             label36.Location = new Point(362, 8);
             label36.Name = "label36";
-            label36.Size = new Size(57, 15);
+            label36.Size = new Size(67, 19);
             label36.TabIndex = 3;
             label36.Text = "Thu nhập";
             // 
@@ -930,7 +932,7 @@
             // 
             noilamviecthon.Location = new Point(56, 34);
             noilamviecthon.Name = "noilamviecthon";
-            noilamviecthon.Size = new Size(54, 23);
+            noilamviecthon.Size = new Size(54, 25);
             noilamviecthon.TabIndex = 10;
             // 
             // label32
@@ -938,7 +940,7 @@
             label32.AutoSize = true;
             label32.Location = new Point(400, 37);
             label32.Name = "label32";
-            label32.Size = new Size(30, 15);
+            label32.Size = new Size(35, 19);
             label32.TabIndex = 3;
             label32.Text = "Tỉnh";
             // 
@@ -947,7 +949,7 @@
             label33.AutoSize = true;
             label33.Location = new Point(264, 37);
             label33.Name = "label33";
-            label33.Size = new Size(42, 15);
+            label33.Size = new Size(49, 19);
             label33.TabIndex = 4;
             label33.Text = "Huyện";
             // 
@@ -956,7 +958,7 @@
             label34.AutoSize = true;
             label34.Location = new Point(136, 38);
             label34.Name = "label34";
-            label34.Size = new Size(20, 15);
+            label34.Size = new Size(24, 19);
             label34.TabIndex = 5;
             label34.Text = "Xã";
             // 
@@ -965,7 +967,7 @@
             label35.AutoSize = true;
             label35.Location = new Point(6, 38);
             label35.Name = "label35";
-            label35.Size = new Size(34, 15);
+            label35.Size = new Size(40, 19);
             label35.TabIndex = 6;
             label35.Text = "Thôn";
             // 
@@ -974,7 +976,7 @@
             lamanxa.AutoSize = true;
             lamanxa.Location = new Point(256, 8);
             lamanxa.Name = "lamanxa";
-            lamanxa.Size = new Size(80, 19);
+            lamanxa.Size = new Size(90, 23);
             lamanxa.TabIndex = 2;
             lamanxa.Text = "Làm ăn xa";
             lamanxa.UseVisualStyleBackColor = true;
@@ -984,7 +986,7 @@
             nghenghiep.FormattingEnabled = true;
             nghenghiep.Location = new Point(98, 5);
             nghenghiep.Name = "nghenghiep";
-            nghenghiep.Size = new Size(121, 23);
+            nghenghiep.Size = new Size(121, 25);
             nghenghiep.TabIndex = 1;
             // 
             // label31
@@ -992,7 +994,7 @@
             label31.AutoSize = true;
             label31.Location = new Point(4, 5);
             label31.Name = "label31";
-            label31.Size = new Size(76, 15);
+            label31.Size = new Size(88, 19);
             label31.TabIndex = 0;
             label31.Text = "Nghề nghiệp";
             // 
@@ -1010,7 +1012,7 @@
             labelxamcham.AutoSize = true;
             labelxamcham.Location = new Point(421, 8);
             labelxamcham.Name = "labelxamcham";
-            labelxamcham.Size = new Size(64, 15);
+            labelxamcham.Size = new Size(73, 19);
             labelxamcham.TabIndex = 1;
             labelxamcham.Text = "Xăm chàm";
             // 
@@ -1059,7 +1061,7 @@
             hoancanhgiadinh.FormattingEnabled = true;
             hoancanhgiadinh.Location = new Point(148, 4);
             hoancanhgiadinh.Name = "hoancanhgiadinh";
-            hoancanhgiadinh.Size = new Size(121, 23);
+            hoancanhgiadinh.Size = new Size(121, 25);
             hoancanhgiadinh.TabIndex = 2;
             // 
             // motahoancanh
@@ -1075,7 +1077,7 @@
             label30.AutoSize = true;
             label30.Location = new Point(9, 28);
             label30.Name = "label30";
-            label30.Size = new Size(97, 15);
+            label30.Size = new Size(114, 19);
             label30.TabIndex = 0;
             label30.Text = "Mô tả hoàn cảnh";
             // 
@@ -1084,7 +1086,7 @@
             label29.AutoSize = true;
             label29.Location = new Point(9, 6);
             label29.Name = "label29";
-            label29.Size = new Size(111, 15);
+            label29.Size = new Size(128, 19);
             label29.TabIndex = 0;
             label29.Text = "Hoàn cảnh gia đình";
             // 
@@ -1167,7 +1169,7 @@
             label27.AutoSize = true;
             label27.Location = new Point(424, 5);
             label27.Name = "label27";
-            label27.Size = new Size(104, 15);
+            label27.Size = new Size(122, 19);
             label27.TabIndex = 0;
             label27.Text = "Vi phạm pháp luật";
             // 
@@ -1195,28 +1197,28 @@
             // 
             sudoan.Location = new Point(847, 7);
             sudoan.Name = "sudoan";
-            sudoan.Size = new Size(54, 23);
+            sudoan.Size = new Size(54, 25);
             sudoan.TabIndex = 7;
             // 
             // trungdoan
             // 
             trungdoan.Location = new Point(704, 5);
             trungdoan.Name = "trungdoan";
-            trungdoan.Size = new Size(54, 23);
+            trungdoan.Size = new Size(54, 25);
             trungdoan.TabIndex = 7;
             // 
             // tieudoan
             // 
             tieudoan.Location = new Point(559, 4);
             tieudoan.Name = "tieudoan";
-            tieudoan.Size = new Size(54, 23);
+            tieudoan.Size = new Size(54, 25);
             tieudoan.TabIndex = 7;
             // 
             // daidoi
             // 
             daidoi.Location = new Point(414, 4);
             daidoi.Name = "daidoi";
-            daidoi.Size = new Size(54, 23);
+            daidoi.Size = new Size(54, 25);
             daidoi.TabIndex = 8;
             // 
             // label23
@@ -1224,7 +1226,7 @@
             label23.AutoSize = true;
             label23.Location = new Point(774, 10);
             label23.Name = "label23";
-            label23.Size = new Size(50, 15);
+            label23.Size = new Size(59, 19);
             label23.TabIndex = 2;
             label23.Text = "Sư đoàn";
             // 
@@ -1232,7 +1234,7 @@
             // 
             trungdoi.Location = new Point(271, 5);
             trungdoi.Name = "trungdoi";
-            trungdoi.Size = new Size(54, 23);
+            trungdoi.Size = new Size(54, 25);
             trungdoi.TabIndex = 9;
             // 
             // label21
@@ -1240,7 +1242,7 @@
             label21.AutoSize = true;
             label21.Location = new Point(631, 8);
             label21.Name = "label21";
-            label21.Size = new Size(67, 15);
+            label21.Size = new Size(79, 19);
             label21.TabIndex = 2;
             label21.Text = "Trung đoàn";
             // 
@@ -1248,7 +1250,7 @@
             // 
             tieudoi.Location = new Point(135, 5);
             tieudoi.Name = "tieudoi";
-            tieudoi.Size = new Size(54, 23);
+            tieudoi.Size = new Size(54, 25);
             tieudoi.TabIndex = 10;
             // 
             // label18
@@ -1256,7 +1258,7 @@
             label18.AutoSize = true;
             label18.Location = new Point(489, 8);
             label18.Name = "label18";
-            label18.Size = new Size(59, 15);
+            label18.Size = new Size(69, 19);
             label18.TabIndex = 2;
             label18.Text = "Tiểu đoàn";
             // 
@@ -1265,7 +1267,7 @@
             label19.AutoSize = true;
             label19.Location = new Point(344, 8);
             label19.Name = "label19";
-            label19.Size = new Size(44, 15);
+            label19.Size = new Size(52, 19);
             label19.TabIndex = 3;
             label19.Text = "Đại đội";
             // 
@@ -1274,7 +1276,7 @@
             label20.AutoSize = true;
             label20.Location = new Point(208, 9);
             label20.Name = "label20";
-            label20.Size = new Size(57, 15);
+            label20.Size = new Size(67, 19);
             label20.TabIndex = 4;
             label20.Text = "Trung đội";
             // 
@@ -1283,7 +1285,7 @@
             label.AutoSize = true;
             label.Location = new Point(74, 9);
             label.Name = "label";
-            label.Size = new Size(49, 15);
+            label.Size = new Size(57, 19);
             label.TabIndex = 5;
             label.Text = "Tiểu đội";
             // 
@@ -1292,7 +1294,7 @@
             label22.AutoSize = true;
             label22.Location = new Point(11, 7);
             label22.Name = "label22";
-            label22.Size = new Size(41, 15);
+            label22.Size = new Size(49, 19);
             label22.TabIndex = 6;
             label22.Text = "Đơn vị";
             // 
@@ -1363,7 +1365,7 @@
             label26.AutoSize = true;
             label26.Location = new Point(11, 250);
             label26.Name = "label26";
-            label26.Size = new Size(291, 15);
+            label26.Size = new Size(337, 19);
             label26.TabIndex = 5;
             label26.Text = "Bản thân đi nước ngoài hoặc Thân nhân ở nước ngoài";
             // 
@@ -1372,7 +1374,7 @@
             label25.AutoSize = true;
             label25.Location = new Point(597, 179);
             label25.Name = "label25";
-            label25.Size = new Size(74, 15);
+            label25.Size = new Size(86, 19);
             label25.TabIndex = 4;
             label25.Text = "Lý do có con";
             // 
@@ -1380,7 +1382,7 @@
             // 
             lydococon.Location = new Point(597, 202);
             lydococon.Name = "lydococon";
-            lydococon.Size = new Size(134, 23);
+            lydococon.Size = new Size(134, 25);
             lydococon.TabIndex = 3;
             // 
             // label24
@@ -1388,7 +1390,7 @@
             label24.AutoSize = true;
             label24.Location = new Point(412, 201);
             label24.Name = "label24";
-            label24.Size = new Size(88, 15);
+            label24.Size = new Size(103, 19);
             label24.TabIndex = 4;
             label24.Text = "Lý do, thời gian";
             // 
@@ -1396,7 +1398,7 @@
             // 
             lydolyhon.Location = new Point(412, 224);
             lydolyhon.Name = "lydolyhon";
-            lydolyhon.Size = new Size(134, 23);
+            lydolyhon.Size = new Size(134, 25);
             lydolyhon.TabIndex = 3;
             // 
             // bomelyhon
@@ -1404,7 +1406,7 @@
             bomelyhon.AutoSize = true;
             bomelyhon.Location = new Point(414, 179);
             bomelyhon.Name = "bomelyhon";
-            bomelyhon.Size = new Size(96, 19);
+            bomelyhon.Size = new Size(109, 23);
             bomelyhon.TabIndex = 2;
             bomelyhon.Text = "Bố mẹ ly hôn";
             bomelyhon.UseVisualStyleBackColor = true;
@@ -1414,7 +1416,7 @@
             conngoaihon.AutoSize = true;
             conngoaihon.Location = new Point(220, 179);
             conngoaihon.Name = "conngoaihon";
-            conngoaihon.Size = new Size(105, 19);
+            conngoaihon.Size = new Size(119, 23);
             conngoaihon.TabIndex = 2;
             conngoaihon.Text = "Con ngoại hôn";
             conngoaihon.UseVisualStyleBackColor = true;
@@ -1424,7 +1426,7 @@
             banthandkkh.AutoSize = true;
             banthandkkh.Location = new Point(13, 206);
             banthandkkh.Name = "banthandkkh";
-            banthandkkh.Size = new Size(123, 19);
+            banthandkkh.Size = new Size(142, 23);
             banthandkkh.TabIndex = 2;
             banthandkkh.Text = "Bản thân đã ĐKKH";
             banthandkkh.UseVisualStyleBackColor = true;
@@ -1434,7 +1436,7 @@
             bomedkkh.AutoSize = true;
             bomedkkh.Location = new Point(13, 179);
             bomedkkh.Name = "bomedkkh";
-            bomedkkh.Size = new Size(110, 19);
+            bomedkkh.Size = new Size(125, 23);
             bomedkkh.TabIndex = 2;
             bomedkkh.Text = "Bố mẹ có ĐKKH";
             bomedkkh.UseVisualStyleBackColor = true;
@@ -1500,7 +1502,7 @@
             label17.AutoSize = true;
             label17.Location = new Point(400, 11);
             label17.Name = "label17";
-            label17.Size = new Size(51, 15);
+            label17.Size = new Size(60, 19);
             label17.TabIndex = 0;
             label17.Text = "Gia đình";
             // 
@@ -1552,7 +1554,7 @@
             doan.AutoSize = true;
             doan.Location = new Point(400, 35);
             doan.Name = "doan";
-            doan.Size = new Size(54, 19);
+            doan.Size = new Size(61, 23);
             doan.TabIndex = 4;
             doan.Text = "Đoàn";
             doan.UseVisualStyleBackColor = true;
@@ -1562,7 +1564,7 @@
             dang.AutoSize = true;
             dang.Location = new Point(196, 35);
             dang.Name = "dang";
-            dang.Size = new Size(54, 19);
+            dang.Size = new Size(61, 23);
             dang.TabIndex = 4;
             dang.Text = "Đảng";
             dang.UseVisualStyleBackColor = true;
@@ -1572,7 +1574,7 @@
             tongiao.FormattingEnabled = true;
             tongiao.Location = new Point(834, 3);
             tongiao.Name = "tongiao";
-            tongiao.Size = new Size(83, 23);
+            tongiao.Size = new Size(83, 25);
             tongiao.TabIndex = 3;
             // 
             // trinhdo
@@ -1580,7 +1582,7 @@
             trinhdo.FormattingEnabled = true;
             trinhdo.Location = new Point(672, 34);
             trinhdo.Name = "trinhdo";
-            trinhdo.Size = new Size(83, 23);
+            trinhdo.Size = new Size(83, 25);
             trinhdo.TabIndex = 3;
             // 
             // vanhoa
@@ -1588,7 +1590,7 @@
             vanhoa.FormattingEnabled = true;
             vanhoa.Location = new Point(84, 34);
             vanhoa.Name = "vanhoa";
-            vanhoa.Size = new Size(83, 23);
+            vanhoa.Size = new Size(83, 25);
             vanhoa.TabIndex = 3;
             // 
             // dantoc
@@ -1596,7 +1598,7 @@
             dantoc.FormattingEnabled = true;
             dantoc.Location = new Point(661, 3);
             dantoc.Name = "dantoc";
-            dantoc.Size = new Size(83, 23);
+            dantoc.Size = new Size(83, 25);
             dantoc.TabIndex = 3;
             // 
             // ngayvaodoan
@@ -1604,7 +1606,7 @@
             ngayvaodoan.Format = DateTimePickerFormat.Short;
             ngayvaodoan.Location = new Point(480, 32);
             ngayvaodoan.Name = "ngayvaodoan";
-            ngayvaodoan.Size = new Size(90, 23);
+            ngayvaodoan.Size = new Size(90, 25);
             ngayvaodoan.TabIndex = 2;
             // 
             // ngayvaodang
@@ -1612,7 +1614,7 @@
             ngayvaodang.Format = DateTimePickerFormat.Short;
             ngayvaodang.Location = new Point(285, 31);
             ngayvaodang.Name = "ngayvaodang";
-            ngayvaodang.Size = new Size(90, 23);
+            ngayvaodang.Size = new Size(90, 25);
             ngayvaodang.TabIndex = 2;
             // 
             // ngaysinh
@@ -1620,70 +1622,70 @@
             ngaysinh.Format = DateTimePickerFormat.Short;
             ngaysinh.Location = new Point(489, 3);
             ngaysinh.Name = "ngaysinh";
-            ngaysinh.Size = new Size(90, 23);
+            ngaysinh.Size = new Size(90, 25);
             ngaysinh.TabIndex = 2;
             // 
             // hoten1
             // 
             hoten1.Location = new Point(314, 3);
             hoten1.Name = "hoten1";
-            hoten1.Size = new Size(94, 23);
+            hoten1.Size = new Size(94, 25);
             hoten1.TabIndex = 1;
             // 
             // noiotinh
             // 
             noiotinh.Location = new Point(559, 91);
             noiotinh.Name = "noiotinh";
-            noiotinh.Size = new Size(54, 23);
+            noiotinh.Size = new Size(54, 25);
             noiotinh.TabIndex = 1;
             // 
             // noiohuyen
             // 
             noiohuyen.Location = new Point(423, 91);
             noiohuyen.Name = "noiohuyen";
-            noiohuyen.Size = new Size(54, 23);
+            noiohuyen.Size = new Size(54, 25);
             noiohuyen.TabIndex = 1;
             // 
             // noioxa
             // 
             noioxa.Location = new Point(295, 92);
             noioxa.Name = "noioxa";
-            noioxa.Size = new Size(54, 23);
+            noioxa.Size = new Size(54, 25);
             noioxa.TabIndex = 1;
             // 
             // noiothon
             // 
             noiothon.Location = new Point(165, 92);
             noiothon.Name = "noiothon";
-            noiothon.Size = new Size(54, 23);
+            noiothon.Size = new Size(54, 25);
             noiothon.TabIndex = 1;
             // 
             // quequantinh
             // 
             quequantinh.Location = new Point(559, 64);
             quequantinh.Name = "quequantinh";
-            quequantinh.Size = new Size(54, 23);
+            quequantinh.Size = new Size(54, 25);
             quequantinh.TabIndex = 1;
             // 
             // quequanhuyen
             // 
             quequanhuyen.Location = new Point(423, 64);
             quequanhuyen.Name = "quequanhuyen";
-            quequanhuyen.Size = new Size(54, 23);
+            quequanhuyen.Size = new Size(54, 25);
             quequanhuyen.TabIndex = 1;
             // 
             // quequanxa
             // 
             quequanxa.Location = new Point(295, 65);
             quequanxa.Name = "quequanxa";
-            quequanxa.Size = new Size(54, 23);
+            quequanxa.Size = new Size(54, 25);
             quequanxa.TabIndex = 1;
             // 
             // quequanthon
             // 
             quequanthon.Location = new Point(165, 65);
             quequanthon.Name = "quequanthon";
-            quequanthon.Size = new Size(54, 23);
+            quequanthon.Size = new Size(54, 25);
             quequanthon.TabIndex = 1;
             // 
             // label28
@@ -1691,7 +1693,7 @@
             label28.AutoSize = true;
             label28.Location = new Point(598, 37);
             label28.Name = "label28";
-            label28.Size = new Size(50, 15);
+            label28.Size = new Size(59, 19);
             label28.TabIndex = 0;
             label28.Text = "Trình độ";
             // 
@@ -1699,7 +1701,7 @@
             // 
             hoten.Location = new Point(62, 4);
             hoten.Name = "hoten";
-            hoten.Size = new Size(127, 23);
+            hoten.Size = new Size(127, 25);
             hoten.TabIndex = 1;
             // 
             // label6
@@ -1707,7 +1709,7 @@
             label6.AutoSize = true;
             label6.Location = new Point(10, 37);
             label6.Name = "label6";
-            label6.Size = new Size(49, 15);
+            label6.Size = new Size(59, 19);
             label6.TabIndex = 0;
             label6.Text = "Văn hóa";
             // 
@@ -1716,7 +1718,7 @@
             label5.AutoSize = true;
             label5.Location = new Point(767, 6);
             label5.Name = "label5";
-            label5.Size = new Size(52, 15);
+            label5.Size = new Size(61, 19);
             label5.TabIndex = 0;
             label5.Text = "Tôn giáo";
             // 
@@ -1725,7 +1727,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(597, 6);
             label4.Name = "label4";
-            label4.Size = new Size(48, 15);
+            label4.Size = new Size(57, 19);
             label4.TabIndex = 0;
             label4.Text = "Dân tộc";
             // 
@@ -1734,7 +1736,7 @@
             label16.AutoSize = true;
             label16.Location = new Point(509, 95);
             label16.Name = "label16";
-            label16.Size = new Size(30, 15);
+            label16.Size = new Size(35, 19);
             label16.TabIndex = 0;
             label16.Text = "Tỉnh";
             // 
@@ -1743,7 +1745,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(414, 6);
             label3.Name = "label3";
-            label3.Size = new Size(60, 15);
+            label3.Size = new Size(70, 19);
             label3.TabIndex = 0;
             label3.Text = "Ngày sinh";
             // 
@@ -1752,7 +1754,7 @@
             label14.AutoSize = true;
             label14.Location = new Point(373, 95);
             label14.Name = "label14";
-            label14.Size = new Size(42, 15);
+            label14.Size = new Size(49, 19);
             label14.TabIndex = 0;
             label14.Text = "Huyện";
             // 
@@ -1761,7 +1763,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(196, 6);
             label2.Name = "label2";
-            label2.Size = new Size(98, 15);
+            label2.Size = new Size(115, 19);
             label2.TabIndex = 0;
             label2.Text = "Tên thường dùng";
             // 
@@ -1770,7 +1772,7 @@
             label12.AutoSize = true;
             label12.Location = new Point(245, 96);
             label12.Name = "label12";
-            label12.Size = new Size(20, 15);
+            label12.Size = new Size(24, 19);
             label12.TabIndex = 0;
             label12.Text = "Xã";
             // 
@@ -1779,7 +1781,7 @@
             label15.AutoSize = true;
             label15.Location = new Point(509, 68);
             label15.Name = "label15";
-            label15.Size = new Size(30, 15);
+            label15.Size = new Size(35, 19);
             label15.TabIndex = 0;
             label15.Text = "Tỉnh";
             // 
@@ -1788,7 +1790,7 @@
             label10.AutoSize = true;
             label10.Location = new Point(115, 96);
             label10.Name = "label10";
-            label10.Size = new Size(34, 15);
+            label10.Size = new Size(40, 19);
             label10.TabIndex = 0;
             label10.Text = "Thôn";
             // 
@@ -1797,7 +1799,7 @@
             label13.AutoSize = true;
             label13.Location = new Point(373, 68);
             label13.Name = "label13";
-            label13.Size = new Size(42, 15);
+            label13.Size = new Size(49, 19);
             label13.TabIndex = 0;
             label13.Text = "Huyện";
             // 
@@ -1806,7 +1808,7 @@
             label8.AutoSize = true;
             label8.Location = new Point(11, 95);
             label8.Name = "label8";
-            label8.Size = new Size(84, 15);
+            label8.Size = new Size(98, 19);
             label8.TabIndex = 0;
             label8.Text = "Nơi ở hiện nay";
             // 
@@ -1815,7 +1817,7 @@
             label11.AutoSize = true;
             label11.Location = new Point(245, 69);
             label11.Name = "label11";
-            label11.Size = new Size(20, 15);
+            label11.Size = new Size(24, 19);
             label11.TabIndex = 0;
             label11.Text = "Xã";
             // 
@@ -1824,7 +1826,7 @@
             label9.AutoSize = true;
             label9.Location = new Point(115, 69);
             label9.Name = "label9";
-            label9.Size = new Size(34, 15);
+            label9.Size = new Size(40, 19);
             label9.TabIndex = 0;
             label9.Text = "Thôn";
             // 
@@ -1833,7 +1835,7 @@
             label7.AutoSize = true;
             label7.Location = new Point(11, 67);
             label7.Name = "label7";
-            label7.Size = new Size(59, 15);
+            label7.Size = new Size(70, 19);
             label7.TabIndex = 0;
             label7.Text = "Quê quán";
             // 
@@ -1842,7 +1844,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(11, 6);
             label1.Name = "label1";
-            label1.Size = new Size(43, 15);
+            label1.Size = new Size(51, 19);
             label1.TabIndex = 0;
             label1.Text = "Họ tên";
             // 
@@ -1862,12 +1864,12 @@
             // 
             ListTemplate.ColumnWidth = 400;
             ListTemplate.FormattingEnabled = true;
-            ListTemplate.ItemHeight = 15;
+            ListTemplate.ItemHeight = 17;
             ListTemplate.Items.AddRange(new object[] { "Mẫu 1: Con ngoại hôn", "Mẫu 2: Cha mẹ ly hôn", "Mẫu 3: Thân nhân ở nước ngoài", "Mẫu 4: Chưa có vợ nhưng có con, có vợ chưa ĐKKH", "Mẫu 5: Con ngụy quân", "Mẫu 6: Con ngụy quyền", "Mẫu 7: Bị xử lý hành chính trước nhập ngũ", "Mẫu 8: TNGT trước nhập ngũ", "Mẫu 9: Mù chữ, không biết đọc, viết, viết chậm", "Mẫu 10: Có hoàn cảnh đặc biệt khó khăn", "Mẫu 11: Đã đi nước ngoài", "Mẫu 12: Cha, mẹ chết", "Mẫu 13: Tham gia băng nhóm tội phạm trước nhập ngũ", "Mẫu 14: Có xăm chàm", "Mẫu 15: Làm ăn xa", "Mẫu 16: Người dân tộc thiểu số", "Mẫu 17: Theo đạo", "Mẫu 18: Tình nguyện phục vụ lâu dài trong Quân đội", "Mẫu 19: Có người thân đi tù", "Mẫu 20: Làm nghề biển", "Mẫu 21: Con thương binh, bệnh binh", "Mẫu 22: Con cán bộ công tác trong quân đội", "Mẫu 23: Con, cháu liệt sĩ", "Mẫu 24: Cháu mẹ VNAH", "Mẫu 25: Nghiện thuốc lá, nghiện rượu", "Mẫu 26: Tham gia MXH", "Mẫu 27: Nhuộm tóc", "Mẫu 28: Học trung cấp, cao đẳng, đại học", "Mẫu 29: Con cán bộ đảng viên", "Mẫu 30: Đảng viên", "Mẫu 31: Có người yêu", "Mẫu 32: Có vợ con", "Mẫu 33: Có vợ con đã ĐKKH", "Mẫu 34: Quân nhân tạo nguồn địa phương", "Mẫu 35: Người thân mác bệnh hiểm nghèo", "Mẫu 36: Tổng hợp", "Mẫu 37: Tổng hợp CLCT", "Mẫu 38: Trường hợp đặc biệt " });
             ListTemplate.Location = new Point(14, 11);
             ListTemplate.MultiColumn = true;
             ListTemplate.Name = "ListTemplate";
-            ListTemplate.Size = new Size(932, 139);
+            ListTemplate.Size = new Size(932, 123);
             ListTemplate.TabIndex = 1;
             ListTemplate.SelectedIndexChanged += SelectTemplate;
             // 
@@ -1893,7 +1895,9 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Tìm kiếm";
             tabPage3.UseVisualStyleBackColor = true;
+            // 
             // viewAll
+            // 
             viewAll.Location = new Point(8, 15);
             viewAll.Name = "viewAll";
             viewAll.Size = new Size(90, 30);
@@ -1901,8 +1905,9 @@
             viewAll.Text = "Xem tất cả";
             viewAll.UseVisualStyleBackColor = true;
             viewAll.Click += viewAll_Click;
-
+            // 
             // btnSearch
+            // 
             btnSearch.Location = new Point(752, 16);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(90, 30);
@@ -1910,34 +1915,22 @@
             btnSearch.Text = "Tìm kiếm";
             btnSearch.UseVisualStyleBackColor = true;
             btnSearch.Click += SearchPeople;
-
+            // 
             // txtSearch
+            // 
             txtSearch.Location = new Point(532, 20);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(200, 23);
+            txtSearch.Size = new Size(200, 25);
             txtSearch.TabIndex = 1;
-
+            // 
             // alldatatable
+            // 
+            alldatatable.AllowUserToAddRows = false;
             alldatatable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             alldatatable.Location = new Point(8, 60);
             alldatatable.Name = "alldatatable";
             alldatatable.Size = new Size(925, 300);
             alldatatable.TabIndex = 0;
-            alldatatable.AllowUserToAddRows = false;
-            alldatatable.ReadOnly = false;
-            this.btnSelectAll = new Button();
-            this.btnUnselectAll = new Button();
-            // btnSelectAll
-            btnSelectAll.Text = "Chọn tất cả";
-            btnSelectAll.Location = new Point(8, 370);
-            btnSelectAll.Size = new Size(100, 30);
-            btnSelectAll.Click += BtnSelectAll_Click;
-
-            // btnUnselectAll
-            btnUnselectAll.Text = "Bỏ chọn tất cả";
-            btnUnselectAll.Location = new Point(120, 370);
-            btnUnselectAll.Size = new Size(120, 30);
-            btnUnselectAll.Click += BtnUnselectAll_Click;
             // 
             // peopleBindingSource
             // 
@@ -1960,19 +1953,38 @@
             menupanel.Size = new Size(940, 41);
             menupanel.TabIndex = 3;
             // 
+            // btnSelectAll
+            // 
+            btnSelectAll.Location = new Point(8, 370);
+            btnSelectAll.Name = "btnSelectAll";
+            btnSelectAll.Size = new Size(100, 30);
+            btnSelectAll.TabIndex = 0;
+            btnSelectAll.Text = "Chọn tất cả";
+            btnSelectAll.Click += BtnSelectAll_Click;
+            // 
+            // btnUnselectAll
+            // 
+            btnUnselectAll.Location = new Point(120, 370);
+            btnUnselectAll.Name = "btnUnselectAll";
+            btnUnselectAll.Size = new Size(120, 30);
+            btnUnselectAll.TabIndex = 0;
+            btnUnselectAll.Text = "Bỏ chọn tất cả";
+            btnUnselectAll.Click += BtnUnselectAll_Click;
+            // 
             // MainForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(962, 369);
             Controls.Add(menupanel);
             Controls.Add(tabControl1);
+            Font = new Font("Segoe UI", 10F);
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
-            this.Font = new Font("Segoe UI", 10);
+            Text = "Quản lý thông tin";
             FormClosed += Closed;
             Load += MainFormLoad;
+            Resize += MainForm_Resize;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             panel2.ResumeLayout(false);
